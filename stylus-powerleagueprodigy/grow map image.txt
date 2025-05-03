@@ -1,0 +1,12 @@
+@-moz-document domain("powerleagueprodigy.com") {
+.css-mujlpt{
+	border: 1px solid rgb(0, 0, 0);
+	padding: 5px;
+	width: 30%;
+}
+
+.css-zq6grw {
+	font-size: 1rem;
+	line-height: 1.334;
+}
+}

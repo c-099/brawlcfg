@@ -1,0 +1,29 @@
+@-moz-document domain("powerleagueprodigy.com") {
+/* containers */
+
+.css-11tiot3 {
+	display: flex;
+	flex-direction: row !important;
+	gap: 15px;
+	padding-left: 100px
+}.css-1ndc4rr {
+	display: flex;
+	flex-direction: row !important;
+	gap: 32px;
+}
+
+.css-1l74j4y {/* player tag */	
+	width: 100px;
+}.css-vubbuv:nth-child(2) {display: none} 
+.css-1gnht4k {/* playertag text */
+	font-size: 9pt;
+	padding: 5px 0px;
+}.css-1a6giau,
+.css-9xwjlf {
+	margin: 0px;
+}
+.css-2b650d{width: 85px}
+.css-1fn1zz0{display: none}
+
+
+}

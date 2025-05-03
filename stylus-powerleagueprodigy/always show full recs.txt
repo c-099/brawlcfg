@@ -1,0 +1,39 @@
+@-moz-document domain("powerleagueprodigy.com") {
+.winProbability {
+    display:block !important;
+	position:static !important;
+	z-index: 1;		
+  }
+.top-brawlers-desktop {
+    display:block
+}
+.top-brawlers-mobile {
+    display:none
+}
+
+.css-1u7ogkz {
+	padding: 1px 10px;
+	max-height: 318px;
+	min-height: 318px;	
+}
+
+.css-1l4ivia {
+	background-color: rgb(42, 58, 77);
+	color: rgb(255, 255, 255);
+	border-radius: 0px;
+	overflow: hidden;
+	max-height: 40px;
+	max-width: 40px;
+	min-width: 40px;
+	margin: 5px 0px;
+}
+.css-8npnwz{
+	padding-top: 0px;
+	margin: 4px 0px;
+}
+
+.css-8npnwz > div > div {
+	height: 35px;
+	margin-top: 5px;
+}
+}

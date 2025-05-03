@@ -1,0 +1,42 @@
+@-moz-document domain("powerleagueprodigy.com") {
+/* hide hyper overlay */
+.css-1grxkil,
+.css-vhvka6
+{display: none}
+
+/* bottom brawler buttons */
+.css-ifx5oe{
+	
+	flex-basis: auto;
+	
+	& img {
+		height: 30px !important;
+		width: 30px !important;
+		margin: 1px 1px 1px 1px;
+	}	
+	
+	.css-9df5y2
+	{
+		font-size: 12px;
+		padding-top: 5px;
+		text-align: left;
+		padding-left: 4px;
+	}
+	
+	.css-yrvyz6,
+	.css-d0sq6k,
+	.css-xo8sq3,
+	.css-1xyyh2d
+	{
+		float: left
+	}
+	
+	
+}
+.css-n06767 > .MuiGrid-item {
+	padding-top: 4px;
+	padding-left: 2px;
+}
+
+
+}

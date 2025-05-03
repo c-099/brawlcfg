@@ -1,0 +1,29 @@
+@-moz-document url-prefix("https://powerleagueprodigy.com/plprodigy") {
+.css-1ythhbh .MuiOutlinedInput-root .MuiAutocomplete-input {
+	padding: 0;
+}.css-1uvydh2 {
+	-webkit-animation-name: unset;
+	animation-name: unset;
+}
+.css-1ty6lww {
+	font-weight: 400;
+	font-size: 1rem;
+	left: 10px;
+	top: 8px;
+	transform: unset !important
+}
+
+.css-1slblgv {
+	margin: 0px;
+	padding: 5px 0px;
+	max-height: 80vh;
+}
+
+.css-1hn4uqo {
+	font-size: 10pt;
+}.css-1slblgv .MuiAutocomplete-option {
+	min-height: 0px;
+	padding: 10px 6px;
+	border-bottom: 1px solid;
+}
+}

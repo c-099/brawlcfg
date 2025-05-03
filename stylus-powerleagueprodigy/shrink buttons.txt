@@ -1,0 +1,36 @@
+@-moz-document url-prefix("https://powerleagueprodigy.com/plprodigy") {
+.css-3ko5ny > .MuiGrid-item {
+	padding-top: 1px;
+}.css-i44wyl {
+	margin: 3px 0px 3px!important;
+}
+
+.css-dfznbg,.css-v3tai3 {
+	height: 60%;
+}.css-1738llb{
+	height: 60%;
+	margin-top: 10px;
+}
+
+.pickBanToggle {
+    display:none!important
+}
+
+.css-1x5jdmq {/* Search Brawlers*/	
+	height: 1.4375em;
+	margin: 0px;
+	display: block;
+	min-width: 0px;
+	width: 100%;
+	animation-name: unset;
+	animation-duration: unset;
+	padding: 9px 14px;
+}
+
+.enemyViewOption {
+	display: flex !important;
+}.MuiFormControlLabel-label.css-9l3uo3 {
+	display: none !important;
+}
+  
+}

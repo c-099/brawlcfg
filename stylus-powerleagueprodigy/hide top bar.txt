@@ -1,0 +1,17 @@
+@-moz-document domain("powerleagueprodigy.com") {
+.css-yhlnsl {
+	width: 100%;
+	position: absolute;
+	z-index: unset; 
+}
+.css-ng05b,
+.css-d8zes7{display: none}
+
+.cl-internal-nfscg9{
+	width: 20px;
+	position:absolute;
+	background: none;
+	right: 15px;
+	z-index: 0;
+}
+}
