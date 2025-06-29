@@ -180,27 +180,42 @@ RestoreMovement() {
         if GetKeyState("MButton", "L")
             Send("{MButton up}")
     }
-
+    E::
 	XButton2:: {
+        BlockInput true
 		static deltaTime := A_TickCount-300
 		if(A_TickCount - deltaTime < 300)
 			return
 		deltaTime := A_TickCount
 
-		if(GetKeyState("RButton"))
-			Click("up, right")
+        pressDown := false
+		if(GetKeyState("RButton")) {
+            pressDown := true
+            Send("{XButton1}")
+            sleep 20        
+            Send("{RButton up}")
+            sleep 100
+        }			
 
 		send("{F8 down}")
-		sleep 70
-		send("{f down}{f up}")
+		sleep 80
+		send("{f}")
+        BlockInput false
 		SendLevel 1
 		SendEvent "{F8 up}"
+
+        if (pressDown)
+            Send("{RButton down}")        
 	}
 
     *LShift:: {
-        if( GetKeyState("RButton", "L")){
+        pressDown := false
+        if( GetKeyState("RButton")){
+            pressDown := true
             Send("{XButton1}")
-            sleep 170
+            sleep 20        
+            Send("{RButton up}")
+            sleep 100        
         }
                     
 		Send("{LShift}")
@@ -211,6 +226,9 @@ RestoreMovement() {
 
 			Send("{LShift}")
 		}
+
+        if (pressDown) 
+            Send("{RButton down}")
     }
 
 	*Space:: {
@@ -232,10 +250,9 @@ RestoreMovement() {
 			Send("{Space}")
 		}
 
-        if (pressDown) {
+        if (pressDown) 
             Send("{RButton down}")
-            sleep 10
-        }
+        
 	}
 
     t::{
@@ -304,10 +321,12 @@ RestoreMovement() {
 
     *MButton:: {
         pressDown := false
-        if(GetKeyState("RButton", "L")) {
+        if(GetKeyState("RButton")) {
             pressDown := true
             Send("{XButton1}")
-            sleep 160
+            sleep 30        
+            Send("{RButton up}")
+            sleep 100
         }
         
         Send("{MButton down}")
