@@ -2,7 +2,7 @@
 #SingleInstance Force
 
 masterToggle := true
-alwaysAimToggle := true
+alwaysAimToggle := false
 
 F4::DoExit()
 F1::Clicked
@@ -69,11 +69,11 @@ ResizeWindows(*) {
 
         if (cW + 3 = wW) {
             OutputDebug("COLLAPSED`n")
-            WinMove(, , 1244, 749)
+            WinMove(, , 1235, 752)
         }
         else {
             OutputDebug("EXPANDED`n")
-            WinMove(, , 1292, 749)
+            WinMove(, , 1291, 752)
         }
 
         OutputDebug("Window: X" wX " Y" wY " - " wW "x" wH "`n")
@@ -85,7 +85,7 @@ ResizeWindows(*) {
 
     if WinExist("Power League Prodigy") {
         WinActivate
-        WinMove(1232, 0, 697, 1030)
+        WinMove(1281, 0, 648, 1030)
     }
     else {
         OutputDebug "Power League Prodigy window not found`n"
@@ -124,20 +124,6 @@ RestoreMovement() {
         Send("{RButton up}")
     }
 
-    ; WheelUp:: {
-    ;     Send("{MButton up}")
-    ; }
-	; WheelDown:: {
-    ;     static sTime := A_TickCount-400
-    ;     if(A_TickCount - sTime < 400)
-    ;         return
-    ;     sTime := A_TickCount
-    ;     if(GetKeyState("RButton", "L")) {
-    ;         Send("{XButton1}")
-    ;         sleep 150
-    ;     }
-    ;     Send("{MButton down}")
-    ; }
     *F13::F8
     ~F8 up::RestoreMovement()
     F10::^+a  
@@ -170,6 +156,26 @@ RestoreMovement() {
         }
 
         Send("{d down}")    
+    }
+
+    *~LCtrl:: {
+        pressDown := false
+        if( GetKeyState("RButton")){
+            pressDown := true
+            Send("{XButton1}")
+            sleep 20        
+            Send("{RButton up}")
+            sleep 100        
+        }
+
+        Send("{q}")
+        sleep 10
+        SendLevel 1
+        SendEvent("{LShift}")
+
+        if (pressDown) {
+            Send("{RButton down}")
+        }
     }
 
     ~XButton1:: {
@@ -311,7 +317,7 @@ RestoreMovement() {
     RButton::{
         if(GetKeyState("RButton", "L")) {
             Send("{RButton up}")
-            sleep 30
+            sleep 70
             Send("{RButton down}")
         }
         else {
