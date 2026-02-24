@@ -158,22 +158,20 @@ RestoreMovement() {
         Send("{d down}")    
     }
 
-    *~LCtrl:: {
+    *LCtrl:: {
         pressDown := false
         if( GetKeyState("RButton")){
             pressDown := true
             Send("{XButton1}")
-            sleep 20        
+            sleep 50        
             Send("{RButton up}")
-            sleep 100        
+            sleep 120        
         }
 
-        Send("{q}")
-        sleep 10
-        SendLevel 1
-        SendEvent("{LShift}")
+        Send("{LCtrl}")        
 
         if (pressDown) {
+            sleep 180
             Send("{RButton down}")
         }
     }
@@ -219,9 +217,9 @@ RestoreMovement() {
         if( GetKeyState("RButton")){
             pressDown := true
             Send("{XButton1}")
-            sleep 20        
+            sleep 50        
             Send("{RButton up}")
-            sleep 100        
+            sleep 120   
         }
                     
 		Send("{LShift}")
@@ -242,9 +240,9 @@ RestoreMovement() {
         if( GetKeyState("RButton")){
             pressDown := true
             Send("{XButton1}")
-            sleep 20        
+            sleep 50        
             Send("{RButton up}")
-            sleep 100        
+            sleep 120
         }
                     
 		Send("{Space}")
@@ -317,7 +315,7 @@ RestoreMovement() {
     RButton::{
         if(GetKeyState("RButton", "L")) {
             Send("{RButton up}")
-            sleep 70
+            sleep 80
             Send("{RButton down}")
         }
         else {
