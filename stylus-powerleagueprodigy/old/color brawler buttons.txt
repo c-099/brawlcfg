@@ -1,6 +1,0 @@
-@-moz-document url-prefix("https://powerleagueprodigy.com/plprodigy") {
-.css-xjbper:hover
-{
-	background-color: rgb(140, 80, 0);
-}
-}

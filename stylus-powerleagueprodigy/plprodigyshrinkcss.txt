@@ -1,0 +1,241 @@
+@-moz-document domain("powerleagueprodigy.com") {
+.top-brawlers-desktop {
+    display:flex;
+	flex-direction: column;
+	scrollbar-width: auto;
+}
+.top-brawlers-mobile {
+    display:none
+}
+.css-16bo7nw { 
+	position: absolute
+}
+
+.MuiAppBar-positionSticky { 
+	position: unset;
+}
+
+.css-d8zes7 {
+	display: none !important
+}
+
+.css-1231b5i {
+	display: none !important
+}
+.css-cacgvk,
+.css-bfr0w7,
+.css-10ehwy0 {
+	display: none;
+}
+/* bottom brawler buttons */
+
+.css-12h8x0a { /* text container */
+	padding: 9px 1px !important;	
+}
+.css-1ntfisx { /* text */
+	font-size: 12px;		
+}
+
+.css-oga8ql {
+	img {	 
+		min-height: 30px !important;
+		height: 30px !important;
+		width: 30px !important;
+		margin: 1px -1px;		
+	}
+	:nth-child(1){
+		width: 35px !important
+	}
+	
+	display:flex;
+	flex-direction:row !important;
+	
+	max-height: 32px;
+	max-width: 100px;
+	transition: unset !important;	
+}
+.enemyViewOption {
+	display: flex !important;
+}
+.MuiFormControlLabel-label.css-9l3uo3 {
+	display: none !important;
+}
+.pickBanToggle {
+	display: none !important;
+}
+
+.css-etisq5{
+	& button {
+		height: 50%
+	}
+}
+
+.css-mj3th5 {
+	& div {
+		margin-bottom: 0px !important;
+	}
+}
+
+.css-66581u .MuiOutlinedInput-root {
+	padding: 0;
+}
+
+.css-1qr5p5j {
+	max-height: 65vh;
+	font-size: 10pt;
+}
+
+.css-yntyu2,
+.css-1ilvhbb { /*turn button*/
+	padding: 0px 12px;	
+}
+
+.css-1jaw3da {
+	margin-left: -20px;
+	margin-right: 5px;
+}
+
+.css-1x5jdmq {
+	height: 1.7em;
+	margin: 0px 10px;
+	padding: 0;
+}
+.css-1ty6lww{
+	font-size: 10pt !important;
+}
+.css-1ty6lww {
+	transform: translate(12px, 7px) scale(1) !important;
+}
+.css-1bdnxjx {
+	transform: translate(14px, -9px) scale(0.55) ;
+}
+
+.css-1ty6lww {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.4375em;
+	left: 0px;
+	top: 0px;
+	transform: translate(10px, 2px) scale(1);
+}
+
+.css-altgag{
+	width: 200px !important;
+}
+
+.css-1qr5p5j .MuiAutocomplete-option {
+	min-height: unset;	
+	padding: 4px 8px;
+}
+
+.css-1beofl1,
+.css-1n4j74a{
+	min-height: 400px;
+}
+
+.css-l33n0q .MuiOutlinedInput-root {
+	height: unset;
+}
+.css-l33n0q .MuiInputBase-input {
+	font-size: 10pt;
+	padding: 0;
+}
+.css-1jlcvjf > .MuiGrid-item {
+	padding-top: 10px;
+}
+
+.css-13apqlo{
+	height: 60px;
+}
+.css-m2wf2a {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.css-3ko5ny > .MuiGrid-item {
+	padding-top: 1px;
+}
+
+.css-8npnwz {
+	margin: 3px 0px;
+}
+
+.css-1y3rwg6 {
+	margin-top: 0px;
+}
+
+.css-1y3rwg6,
+.css-s2674x {
+	width: 45px;
+	height: 45px;
+}
+
+.css-s2674x > div:first-child {
+	height: 45px !important;
+	width: 45px !important;
+}
+
+.css-sr7n84 > div:first-child {
+	height: 35px;
+}
+
+.css-ciycq {
+	top: 5px;
+	transform: translateX(-50%) scale(0.55);
+	width: 350px;
+	z-index: 1;
+	opacity: 75%;
+}
+.css-hyn1of{
+	display: flex;
+	flex-direction: row !important;
+}
+
+
+.css-13sljp9 {
+	padding-left: 45px	
+}
+
+.css-28i9zp,
+.css-1cljq8d{
+	width: 180px;
+}
+
+.css-28i9zp{
+	margin-left: 15px;
+}
+
+.css-vubbuv:nth-child(2) {display: none} 
+.css-1gnht4k {/* playertag text */
+	font-size: 9pt !important;
+}
+.css-1a6giau{
+	margin: 0px;
+}
+
+.css-9xwjlf {
+	margin-left: 0px;
+}
+
+.css-10cbbg3 {
+	margin: 5px 0px -8px;
+	font-weight: 500;
+	font-size: 9px;
+	line-height: 1.5;
+}
+
+.css-1oo5i5b .MuiSlider-markLabel {
+	top: 22px;
+	font-size: 12px;
+}
+
+.css-lvaa1i {
+	padding: 4px;
+	border-radius: 10px;
+}
+.css-vubbuv {
+	width: 20px;
+	height: 20px;
+	font-size: 1.5rem;
+}
+}

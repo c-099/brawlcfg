@@ -69,11 +69,11 @@ ResizeWindows(*) {
 
         if (cW + 3 = wW) {
             OutputDebug("COLLAPSED`n")
-            WinMove(, , 1235, 752)
+            WinMove(, , 1174, 708)
         }
         else {
             OutputDebug("EXPANDED`n")
-            WinMove(, , 1291, 752)
+            WinMove(, , 1220, 708)
         }
 
         OutputDebug("Window: X" wX " Y" wY " - " wW "x" wH "`n")
@@ -83,12 +83,12 @@ ResizeWindows(*) {
         OutputDebug "Bluestacks window not found`n"
     }
 
-    if WinExist("Power League Prodigy") {
+    if WinExist("PL Prodigy") {
         WinActivate
-        WinMove(1281, 0, 648, 1030)
+        WinMove(1212, 0, 716, 1034)
     }
     else {
-        OutputDebug "Power League Prodigy window not found`n"
+        OutputDebug "PL Prodigy window not found`n"
     }
     MyGui["Resize"].Enabled := true 
     MyGui["Resize"].text := "Resize"
