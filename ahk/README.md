@@ -1,4 +1,4 @@
-discord.gg/mDx55QKT3s
+[discord.gg/mDx55QKT3s](https://discord.gg/mDx55QKT3s)
 
 To use this you can either [install Autohotkey](https://github.com/AutoHotkey/AutoHotkey) and run the .ahk file 
 
