@@ -1,8 +1,8 @@
 discord.gg/mDx55QKT3s
 
-To use this you can either [https://github.com/AutoHotkey/AutoHotkey](install Autohotkey) and run the .ahk file 
+To use this you can either [install Autohotkey](https://github.com/AutoHotkey/AutoHotkey) and run the .ahk file 
 
-or [https://github.com/AutoHotkey/AutoHotkey/releases/download/v2.0.21/AutoHotkey_2.0.21.zip](download the AutoHotkey .zip) and rename the exe file to 'brawlstars.exe' and it will automatically start the brawlstars.ahk script when you start it.
+or [download the AutoHotkey .zip](https://github.com/AutoHotkey/AutoHotkey/releases/download/v2.0.21/AutoHotkey_2.0.21.zip) and rename the exe file to 'brawlstars.exe' and it will automatically start the brawlstars.ahk script when you start it.
 
 F4 = Exit
 F1 = Toggle everything
