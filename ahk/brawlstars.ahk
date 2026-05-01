@@ -3,22 +3,25 @@
 
 masterToggle := true
 alwaysAimToggle := false
+aimGadgetToggle := false
 
 F4::DoExit()
 F1::Clicked
 F2::Clicked_2 
+F3::Clicked_3
 
 MyGui := Gui(, "Brawl Bluestacks Controls")
 MyGui.BackColor := "Black"
 MyGui.SetFont("s8", "Courier New")
 MyGui.Add("Button", "x50 y5 w90 h30 vResize", "RESIZE").OnEvent("Click", ResizeWindows)
 MyGui.Add("Button", "w90 h30 vToggle", masterToggle ? "Toggle: ON" : "Toggle: OFF").OnEvent("Click", Clicked)
-MyGui.Add("Button", "w90 h30 vToggle_2", alwaysAimToggle ? "Toggle_2: ON" : "Toggle_2: OFF").OnEvent("Click", Clicked_2)
+MyGui.Add("Button", "w90 h30 vToggle_2", alwaysAimToggle ? "Always Aim: ON" : "Always Aim: OFF").OnEvent("Click", Clicked_2)
+MyGui.Add("Button", "w90 h30 vToggle_3", aimGadgetToggle ? "Aim Gadget: ON" : "Aim Gadget: OFF").OnEvent("Click", Clicked_3)
 MyGui.Add("Button", "w90 h30", "EXIT").OnEvent("Click", DoExit)
 
 MyGui.SetFont("s12", "Courier New")
 MyGui.OnEvent("Close", DoExit)
-MyGui.Show("w190 h150 y760")
+MyGui.Show("w190 h190 y760")
 
 DoExit(*) {
     if GetKeyState("RButton", "L")
@@ -42,8 +45,16 @@ Clicked_2(*) {
         Send("{RButton up}")
     }
     global alwaysAimToggle := !alwaysAimToggle
-    MyGui["Toggle_2"].text := alwaysAimToggle ? "Toggle_2: ON" : "Toggle_2: OFF"
-    ToolTip(alwaysAimToggle ? "Toggle_2: ON" : "Toggle_2: OFF")
+    MyGui["Toggle_2"].text := alwaysAimToggle ? "Always Aim: ON" : "Always Aim: OFF"
+    ToolTip(alwaysAimToggle ? "Always Aim: ON" : "Always Aim: OFF")
+    SetTimer(() => ToolTip(), -1200)
+}
+
+Clicked_3(*) {
+    
+    global aimGadgetToggle := !aimGadgetToggle
+    MyGui["Toggle_3"].text := aimGadgetToggle ? "Aim Gadget: ON" : "Aim Gadget: OFF"
+    ToolTip(aimGadgetToggle ? "Aim Gadget: ON" : "Aim Gadget: OFF")
     SetTimer(() => ToolTip(), -1200)
 }
 
@@ -124,143 +135,120 @@ RestoreMovement() {
         Send("{RButton up}")
     }
 
-    *F13::F8
-    ~F8 up::RestoreMovement()
-    F10::^+a  
+    ;*F13::F8
+    ;~*F8 up::RestoreMovement()
 
-    *a up:: {
-        Send("{a up}")
-
-        if (GetKeyState("d", "P")) {
-            Send("{d down}")
-        }
-    }
-    *a:: {
+    *~a:: {
         if (GetKeyState("d")) {
             Send("{d up}")
         }
-
-        Send("{a down}")    
     }
-
-    *d up:: {
-        Send("{d up}")
-
-        if (GetKeyState("a", "P")) {
-            Send("{a down}")
+    *~a up:: {
+        if (GetKeyState("d", "P")) {
+            SendLevel 1
+		    SendEvent("{d down}")
         }
     }
-    *d:: {
+
+    *~d:: {
         if (GetKeyState("a")) {
             Send("{a up}")
+        } 
+    }
+    *~d up:: {
+        if (GetKeyState("a", "P")) {
+            SendLevel 1
+		    SendEvent("{a down}")
+        } 
+    }
+
+    *e:: {        
+        if( GetKeyState("RButton")){
+            Send("{XButton1}")
+            Send("{RButton up}")
+            sleep 150
         }
 
-        Send("{d down}")    
+        Send("{e down}")
+        KeyWait("e")
+        Send("{e up}")
+    }
+
+    *Space:: {
+        if(GetKeyState("LShift")) {
+            return
+        }
+        if( GetKeyState("RButton")){
+            Send("{XButton1}")
+            Send("{RButton up}")
+            sleep 150
+        }
+                    
+		Send("{Space down}")
+        KeyWait("Space")
+        Send("{Space up}")
+    }
+
+    *LShift:: {
+        if(GetKeyState("RButton")) {
+            Send("{XButton1}")
+            Send("{RButton up}")
+            sleep 150
+        }
+        if(GetKeyState("Space")) {
+            Send("{Space up}")
+            sleep 150
+        }
+
+		SendEvent("{LShift down}")
+        KeyWait("LShift")
+        Send("{LShift up}")
+        
+        if(GetKeyState("Space", "P")) {
+            sleep 20
+		    Send("{Space down}")
+            KeyWait("Space")
+            Send("{Space up}")
+        }
+        if(GetKeyState("RButton", "P")) {
+            sleep 20
+            SendLevel 1
+		    SendEvent("{RButton down}")
+        }
     }
 
     *LCtrl:: {
-        pressDown := false
         if( GetKeyState("RButton")){
-            pressDown := true
             Send("{XButton1}")
-            sleep 50        
             Send("{RButton up}")
-            sleep 120        
+            sleep 150
         }
 
-        Send("{LCtrl}")        
-
-        if (pressDown) {
-            sleep 180
-            Send("{RButton down}")
-        }
+        Send("{LCtrl down}")
+        KeyWait("LCtrl")
+        Send("{LCtrl up}")        
     }
 
-    ~XButton1:: {
-        sleep 30
-        if GetKeyState("RButton", "L")
-            Send("{RButton up}")
-
-        if GetKeyState("MButton", "L")
-            Send("{MButton up}")
-    }
-    E::
-	XButton2:: {
-        BlockInput true
+    *XButton1:: {        
 		static deltaTime := A_TickCount-300
 		if(A_TickCount - deltaTime < 300)
 			return
 		deltaTime := A_TickCount
 
-        pressDown := false
+        Send("{XButton1}")
+        
 		if(GetKeyState("RButton")) {
-            pressDown := true
-            Send("{XButton1}")
-            sleep 20        
             Send("{RButton up}")
-            sleep 100
-        }			
-
-		send("{F8 down}")
-		sleep 80
-		send("{f}")
-        BlockInput false
-		SendLevel 1
-		SendEvent "{F8 up}"
-
-        if (pressDown)
-            Send("{RButton down}")        
-	}
-
-    *LShift:: {
-        pressDown := false
-        if( GetKeyState("RButton")){
-            pressDown := true
-            Send("{XButton1}")
-            sleep 50        
-            Send("{RButton up}")
-            sleep 120   
         }
-                    
-		Send("{LShift}")
-		Loop {
-            sleep 150
-            if( !GetKeyState("LShift", "P"))
-				break
-
-			Send("{LShift}")
-		}
-
-        if (pressDown) 
-            Send("{RButton down}")
+        if(GetKeyState("MButton")) {
+            Send("{MButton up}")
+        }
     }
 
-	*Space:: {
-        pressDown := false
-        if( GetKeyState("RButton")){
-            pressDown := true
-            Send("{XButton1}")
-            sleep 50        
-            Send("{RButton up}")
-            sleep 120
-        }
-                    
-		Send("{Space}")
-		Loop {
-            sleep 150
-            if( !GetKeyState("Space", "P"))
-				break
-
-			Send("{Space}")
-		}
-
-        if (pressDown) 
-            Send("{RButton down}")
-        
-	}
+	;*XButton2:: {}
 
     t::{
-		sleepTime := 30        
+		sleepTime := 25        
 
 		send("{w up}{a up}{s up}{d up}")
 		Loop {
@@ -310,12 +298,27 @@ RestoreMovement() {
 
 		RestoreMovement()
 	}
+#Hotif masterToggle and aimGadgetToggle
+   *f:: {
+        if( GetKeyState("RButton")){
+            pressDown := true
+            Send("{XButton1}")
+            Send("{RButton up}")
+            sleep 150
+        }
 
+        
+            Send("{f down}")
+            KeyWait("f")
+            Send("{f up}")
+        
+        
+    }
 #HotIf alwaysAimToggle && masterToggle && !WinExist("BlueStacks Keymap Editor") && WinActive("ahk_class Qt672QWindowIcon")
     RButton::{
         if(GetKeyState("RButton", "L")) {
             Send("{RButton up}")
-            sleep 80
+            sleep 50
             Send("{RButton down}")
         }
         else {
@@ -324,28 +327,19 @@ RestoreMovement() {
     }
 
     *MButton:: {
-        pressDown := false
         if(GetKeyState("RButton")) {
-            pressDown := true
             Send("{XButton1}")
-            sleep 30        
             Send("{RButton up}")
-            sleep 100
+            sleep 150
         }
         
         Send("{MButton down}")
         waitTime := A_TickCount
         KeyWait("MButton")
         waitTime := A_TickCount - waitTime
-        if (waitTime < 50)
-            sleep 50        
-        Send("{MButton up}")
-
-         if (pressDown) {
-            Send("{RButton up}")
-            sleep 10
-            Send("{RButton down}")
-         }
+        if (waitTime < 20)
+            sleep 20        
+        Send("{MButton up}")         
     }
 
     *LButton:: {
